@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_masterclass/screens/explicit_animation_screen.dart';
 import 'package:flutter_animations_masterclass/screens/implicit_animation_screen.dart';
+import 'package:flutter_animations_masterclass/screens/swiping_cards_screen.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({super.key});
@@ -12,7 +13,8 @@ class MenuScreen extends StatefulWidget {
 class _MenuScreenState extends State<MenuScreen> {
   final Map<String, Widget> _screens = {
     'implicit': const ImplicitAnimationScreen(),
-    'explicit': const ExplicitAnimationScreen()
+    'explicit': const ExplicitAnimationScreen(),
+    'swiping cards': const SwipingCardsScreen(),
   };
 
   void _onPush({required String name}) {
@@ -41,6 +43,9 @@ class _MenuScreenState extends State<MenuScreen> {
               onPressed: () => _onPush(name: 'explicit'),
               child: const Text('Explicit Animations'),
             ),
+            ElevatedButton(
+                onPressed: () => _onPush(name: 'swiping cards'),
+                child: const Text('Swiping Cards')),
           ],
         ),
       ),
