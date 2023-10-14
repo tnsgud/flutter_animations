@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_masterclass/screens/explicit_animation_screen.dart';
 import 'package:flutter_animations_masterclass/screens/implicit_animation_screen.dart';
+import 'package:flutter_animations_masterclass/screens/music_player_screen.dart';
 import 'package:flutter_animations_masterclass/screens/swiping_cards_screen.dart';
 
 class MenuScreen extends StatefulWidget {
@@ -15,6 +16,7 @@ class _MenuScreenState extends State<MenuScreen> {
     'implicit': const ImplicitAnimationScreen(),
     'explicit': const ExplicitAnimationScreen(),
     'swiping cards': const SwipingCardsScreen(),
+    'music player': const MusicPlayerScreen(),
   };
 
   void _onPush({required String name}) {
@@ -44,8 +46,13 @@ class _MenuScreenState extends State<MenuScreen> {
               child: const Text('Explicit Animations'),
             ),
             ElevatedButton(
-                onPressed: () => _onPush(name: 'swiping cards'),
-                child: const Text('Swiping Cards')),
+              onPressed: () => _onPush(name: 'swiping cards'),
+              child: const Text('Swiping Cards'),
+            ),
+            ElevatedButton(
+              onPressed: () => _onPush(name: 'music player'),
+              child: const Text('Music Player'),
+            ),
           ],
         ),
       ),
